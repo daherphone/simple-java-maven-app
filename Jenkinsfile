@@ -8,7 +8,7 @@ pipeline {
         echo "Toggle: ${params.TOGGLE}"
         echo "Choice: ${params.CHOICE}"
         echo "Password: ${params.PASSWORD}"
-        sh 'sh \'echo "$GENERATED_VERSION_NUMBER"\''
+        sh 'echo $version'
       }
     }
 
@@ -32,7 +32,7 @@ pipeline {
 
   }
   environment {
-    GENERATED_VERSION_NUMBER = 'VersionNumber([ projectStartDate: \'2018-12-31\', versionNumberString: \'aodb-$PREFIX-${BUILD_DATE_FORMATTED, "yyyy-MM-dd"}-${BUILDS_TODAY}\', versionPrefix: \'\', worstResultForIncrement: \'SUCCESS\' ])'
+    version = 'VersionNumber([ projectStartDate: \'2018-12-31\', versionNumberString: \'aodb-$PREFIX-${BUILD_DATE_FORMATTED, "yyyy-MM-dd"}-${BUILDS_TODAY}\', versionPrefix: \'\', worstResultForIncrement: \'SUCCESS\' ])'
   }
   parameters {
     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
