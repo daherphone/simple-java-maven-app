@@ -8,7 +8,7 @@ pipeline {
         echo "Toggle: ${params.TOGGLE}"
         echo "Choice: ${params.CHOICE}"
         echo "Password: ${params.PASSWORD}"
-        echo '"Version: $GENERATED_VERSION_NUMBER"'
+        sh 'sh \'echo "$GENERATED_VERSION_NUMBER"\''
       }
     }
 
