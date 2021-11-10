@@ -32,7 +32,7 @@ pipeline {
 
   }
   environment {
-    version = 'VersionNumber([ projectStartDate: \'2018-12-31\', versionNumberString: \'aodb-$PREFIX-${BUILD_DATE_FORMATTED, "yyyy-MM-dd"}-${BUILDS_TODAY}\', versionPrefix: \'\', worstResultForIncrement: \'SUCCESS\' ])'
+    version = 'VersionNumber( projectStartDate: \'2018-12-31\', versionNumberString: \'aodb-$PREFIX-${BUILD_DATE_FORMATTED, "yyyy-MM-dd"}-${BUILDS_TODAY}\', versionPrefix: \'dv\', worstResultForIncrement: \'SUCCESS\' )'
   }
   parameters {
     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
